@@ -16,19 +16,10 @@ class CheckoutService {
         LocalDate dueDate = checkoutDate.plusDays(rentalDays);
         int chargeDays = calculateChargeDays(tool, checkoutDate, rentalDays);
 
-        System.out.println("Checkout calculation:");
-        System.out.println("Tool: " + tool.getCode() + ", Type: " + tool.getType() + ", Brand: " + tool.getBrand());
-        System.out.println("Rental days: " + rentalDays + ", Charge days: " + chargeDays);
-
         double dailyCharge = tool.getDailyCharge();
         double preDiscountCharge = Math.round(chargeDays * dailyCharge * 100.0) / 100.0;
         double discountAmount = Math.round((preDiscountCharge * discountPercent / 100.0) * 100.0) / 100.0;
         double finalCharge = Math.round((preDiscountCharge - discountAmount) * 100.0) / 100.0;
-
-        System.out.println("Daily charge: " + dailyCharge);
-        System.out.println("Pre-discount charge: " + preDiscountCharge);
-        System.out.println("Discount amount: " + discountAmount);
-        System.out.println("Final charge: " + finalCharge);
 
         return new RentalAgreement(toolCode, tool.getType(), tool.getBrand(), rentalDays,
                 checkoutDate, dueDate, tool.getDailyCharge(), chargeDays,
