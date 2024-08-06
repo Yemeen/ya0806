@@ -14,13 +14,13 @@ Manage tool rentals, including checkout processes and rental agreement generatio
    cd ya0806
    ```
 
-To build the project, run:
+4. To build the project, run:
 
 ```
 ./gradlew build
 ```
 
-Run the app with an interface
+5. Run the app with an interface
 
 ```
 ./gradlew run --console=plain
