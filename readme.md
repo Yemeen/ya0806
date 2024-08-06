@@ -16,12 +16,12 @@ Manage tool rentals, including checkout processes and rental agreement generatio
 
 4. To build the project, run:
 
-```
-./gradlew build
-```
+    ```
+    ./gradlew build
+    ```
 
 5. Run the app with an interface
 
-```
-./gradlew run --console=plain
-```
+    ```
+    ./gradlew run --console=plain
+    ```
